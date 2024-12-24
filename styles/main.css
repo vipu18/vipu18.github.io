@@ -6,6 +6,7 @@
     --mainLinkColor-light:#0da2b8;
     --mainBorderColor-light:rgb(218, 218, 218);
     --mainBgColor-light:rgb(249, 250,251);
+    --frameBorderColor: rgb(218, 218, 218); /* Default frame border color */
 }
 
 [data-theme="dark"]{
@@ -14,6 +15,7 @@
     --mainLinkColor:rgb(30, 190,214);
     --mainBorderColor:#2b3031;
     --mainBgColor:#131415;
+    --frameBorderColor: var(--mainBorderColor);
 }
 
 [data-theme="light"]{
@@ -22,6 +24,7 @@
     --mainLinkColor: var(--mainLinkColor-light);
     --mainBorderColor: var(--mainBorderColor-light);
     --mainBgColor: var(--mainBgColor-light);
+    --frameBorderColor: var(--mainBorderColor-light);
 }
 
 *{
@@ -44,10 +47,6 @@ a{
     text-decoration: none;
     color: var(--mainLinkColor);
     font-weight: 500;
-}
-
-.skills-set, .card--work-history, .line-break {
-    border-color: var(--mainBorderColor);
 }
 
 li{
@@ -123,16 +122,18 @@ li{
 }
 
 .skills-set{
-    border: 1px solid var(--mainBorderColor);
+    border: 1px solid var(--frameBorderColor);
     border-radius: 5px;
     padding: 0.5em 1em;
     align-items: center;
+    color: var(--mainTextColor); /* Ensure text color is applied */
 }
 
 .card--project{
     padding-top: 1em;
     padding-bottom: 1em;
-    border-top: 1px solid var(--mainBorderColor);
+    border-top: 1px solid var(--frameBorderColor);
+    color: var(--mainTextColor); /* Ensure text color is applied */
 }
 
 .card--project a{
@@ -145,15 +146,17 @@ li{
 }
 
 .card--work-history{
-    border-left: 1px solid var(--mainBorderColor);
+    border-left: 1px solid var(--frameBorderColor);
     margin-top: 3em;
     margin-bottom: 3em;
     padding-left: 2em;
+    color: var(--mainTextColor); /* Ensure text color is applied */
 }
 
 .line-break{
-    background-color: var(--mainBorderColor);
+    background-color: var(--frameBorderColor);
     height: 1px;
+    color: var(--mainTextColor); /* Ensure text color is applied */
 }
 
 #heart {
