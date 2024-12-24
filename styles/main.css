@@ -16,14 +16,19 @@
     --mainBgColor:#131415;
 }
 
-
+[data-theme="light"]{
+    --mainTextColor: var(--mainTextColor-light);
+    --secondaryTextColor: var(--secondaryTextColor-light);
+    --mainLinkColor: var(--mainLinkColor-light);
+    --mainBorderColor: var(--mainBorderColor-light);
+    --mainBgColor: var(--mainBgColor-light);
+}
 
 *{
     font-family: 'Readex Pro';
     line-height: 1.5em;
     box-sizing: border-box;
     color: var(--mainTextColor);
-    
 }
 
 body{
@@ -128,13 +133,11 @@ li{
 
 .card--project a{
     color: var(--mainTextColor);
-
     transition: 0.3s;
 }
 
 .card--project a:hover{
     color: rgb(30, 190,214);
-
 }
 
 .card--work-history{
@@ -154,7 +157,7 @@ li{
     font-size: 24px;
     perspective: 1000px;
     transform-style: preserve-3d;
-    animation: spin 5s linear infinite, pump 3s ease-in-out infinite;
+    animation: spin 5s linear infinite, pump 2.5s ease-in-out infinite;
 }
 
 @keyframes spin {
@@ -166,7 +169,6 @@ li{
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.2); }
 }
-
 
 @media(max-width:600px){
 
