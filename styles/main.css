@@ -46,6 +46,10 @@ a{
     font-weight: 500;
 }
 
+.skills-set, .card--work-history, .line-break {
+    border-color: var(--mainBorderColor);
+}
+
 li{
     line-height: 1.9em;
 }
