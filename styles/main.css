@@ -153,6 +153,18 @@ li{
     color: var(--mainTextColor); /* Ensure text color is applied */
 }
 
+.project-link {
+    text-decoration: none;
+    color: lightblue;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+.project-link:hover {
+    color: #007bff; /* Change to your preferred hover color */
+  }
+  
+
 .line-break{
     background-color: var(--frameBorderColor);
     height: 1px;
