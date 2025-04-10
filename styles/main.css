@@ -155,7 +155,7 @@ li{
 
 .project-link {
     text-decoration: none;
-    color: lightblue;
+    color: rgb(81, 164, 192);
     font-weight: bold;
     transition: color 0.3s ease;
   }
