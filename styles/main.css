@@ -1,219 +1,224 @@
-@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;500;600;700&display=swap");
 
-:root{
-    --mainTextColor-light:#000;
-    --secondaryTextColor-light:rgb(51 51 51);
-    --mainLinkColor-light:#0da2b8;
-    --mainBorderColor-light:rgb(218, 218, 218);
-    --mainBgColor-light:rgb(249, 250,251);
-    --frameBorderColor: rgb(218, 218, 218); /* Default frame border color */
+:root {
+  --mainTextColor-light: #000;
+  --secondaryTextColor-light: rgb(51 51 51);
+  --mainLinkColor-light: #0da2b8;
+  --mainBorderColor-light: rgb(218, 218, 218);
+  --mainBgColor-light: rgb(249, 250, 251);
 }
 
-[data-theme="dark"]{
-    --mainTextColor:#fff;
-    --secondaryTextColor:#adb0b1;
-    --mainLinkColor:rgb(30, 190,214);
-    --mainBorderColor:#2b3031;
-    --mainBgColor:#131415;
-    --frameBorderColor: var(--mainBorderColor);
+[data-theme="dark"] {
+  --mainTextColor: #fff;
+  --secondaryTextColor: #adb0b1;
+  --mainLinkColor: rgb(30, 190, 214);
+  --mainBorderColor: #2b3031;
+  --mainBgColor: #131415;
 }
 
-[data-theme="light"]{
-    --mainTextColor: var(--mainTextColor-light);
-    --secondaryTextColor: var(--secondaryTextColor-light);
-    --mainLinkColor: var(--mainLinkColor-light);
-    --mainBorderColor: var(--mainBorderColor-light);
-    --mainBgColor: var(--mainBgColor-light);
-    --frameBorderColor: var(--mainBorderColor-light);
+[data-theme="light"] {
+  --mainTextColor: var(--mainTextColor-light);
+  --secondaryTextColor: var(--secondaryTextColor-light);
+  --mainLinkColor: var(--mainLinkColor-light);
+  --mainBorderColor: var(--mainBorderColor-light);
+  --mainBgColor: var(--mainBgColor-light);
 }
 
-*{
-    font-family: 'Readex Pro';
-    line-height: 1.5em;
-    box-sizing: border-box;
-    color: var(--mainTextColor);
+* {
+  font-family: "Readex Pro", sans-serif;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  color: var(--mainTextColor);
 }
 
-body{
-    background-color: var(--mainBgColor);            
+body {
+  background-color: var(--mainBgColor);
 }
 
-p, span, li{
-    color: var(--secondaryTextColor);
-    font-size: 1em;
+p,
+span,
+li {
+  color: var(--secondaryTextColor);
+  font-size: 1em;
 }
 
-a{
-    text-decoration: none;
-    color: var(--mainLinkColor);
-    font-weight: 500;
+a {
+  text-decoration: none;
+  color: var(--mainLinkColor);
+  font-weight: 500;
 }
 
-li{
-    line-height: 1.9em;
+li {
+  line-height: 1.9em;
 }
 
-#container--main{
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 1em;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--mainTextColor);
+  font-weight: 600;
 }
 
-.section--page{
-    padding-top: 1em;
-    padding-bottom: 1em;
+#container--main {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-#wrapper--hero{
-    display: flex;
-    align-items: center;
-    gap: 4em;
+.section--page {
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
-#bio, a{
-    font-weight: 300;
+#wrapper--hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-#user-name{
-    font-size: 48px;
-    line-height: 1em;
+#user-name {
+  font-size: 48px;
+  line-height: 1em;
 }
 
-#profile-pic{
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
+#profile-pic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-#email{
-    color: var(--mainTextColor);
+#socials--list {
+  display: flex;
+  justify-content: flex-start;
+  column-gap: 1.5em;
+  flex-wrap: wrap;
+  margin-top: 1.5em;
 }
 
-#socials--list{
-    display: flex;
-    justify-content: space-between;
-    column-gap: 1em;
-    flex-wrap: wrap;
+#socials--list a {
+  font-weight: 500;
+  color: var(--secondaryTextColor);
+  font-size: 0.9em;
+  transition: 0.3s;
 }
 
-#socials--list a{
-    font-weight: 300;
-    color: var(--secondaryTextColor);
-    font-size: 0.9em;
-    transition: 0.3s;
+#socials--list a:hover {
+  color: var(--mainLinkColor);
 }
 
-#socials--list a:hover{
-    font-weight: 100;
-    color: var(--mainLinkColor);
-    font-size: 0.9em;
+#qualifications--list {
+  list-style: none;
+  padding-left: 0;
 }
 
-#qualifications--list{
-    list-style: none;
+#skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  font-size: 0.9em;
 }
 
-#skills{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    font-size: 0.9em;
+.skills-set {
+  border: 1px solid var(--mainBorderColor);
+  border-radius: 5px;
+  padding: 0.5em 1em;
 }
 
-.skills-set{
-    border: 1px solid var(--frameBorderColor);
-    border-radius: 5px;
-    padding: 0.5em 1em;
-    align-items: center;
-    color: var(--mainTextColor); /* Ensure text color is applied */
+#certificates-list {
+  list-style: none;
+  padding: 0;
 }
 
-.card--project{
-    padding-top: 1em;
-    padding-bottom: 1em;
-    border-top: 1px solid var(--frameBorderColor);
-    color: var(--mainTextColor); /* Ensure text color is applied */
+.card--project {
+  padding: 1em 0;
+  border-top: 1px solid var(--mainBorderColor);
 }
 
-.card--project a{
-    color: var(--mainTextColor);
-    transition: 0.3s;
+#certificates-list .card--project a {
+  color: var(--mainTextColor);
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.card--project a:hover{
-    color: rgb(30, 190,214);
+#certificates-list .card--project a:hover {
+  color: var(--mainLinkColor);
 }
 
-.card--work-history{
-    border-left: 1px solid var(--frameBorderColor);
-    margin-top: 3em;
-    margin-bottom: 3em;
-    padding-left: 2em;
-    color: var(--mainTextColor); /* Ensure text color is applied */
+.card--work-history {
+  border-left: 3px solid var(--mainLinkColor);
+  margin: 0 0 2em 0;
+  padding-left: 2em;
 }
 
 .project-link {
-    text-decoration: none;
-    color: rgb(81, 164, 192);
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-  
-.project-link:hover {
-    color: #007bff; /* Change to your preferred hover color */
-  }
-  
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--mainTextColor);
+  transition: color 0.3s ease;
+}
 
-.line-break{
-    background-color: var(--frameBorderColor);
-    height: 1px;
-    color: var(--mainTextColor); /* Ensure text color is applied */
+.project-link:hover {
+  color: var(--mainLinkColor);
+}
+
+.line-break {
+  background-color: var(--mainBorderColor);
+  height: 1px;
 }
 
 #heart {
-    display: inline-block;
-    font-size: 24px;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-    animation: spin 5s linear infinite, pump 2.5s ease-in-out infinite;
+  display: inline-block;
+  font-size: 24px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  animation: spin 5s linear infinite, pump 2.5s ease-in-out infinite;
+}
+
+/* === LAYOUT STYLES === */
+.main-grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1/3 and 2/3 column layout */
+  gap: 3rem;
+  margin-top: 3rem;
+  align-items: start;
 }
 
 @keyframes spin {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
 }
 
 @keyframes pump {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.2); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
 }
 
-@media(max-width:600px){
+/* === RESPONSIVE STYLES === */
+@media (max-width: 950px) {
+  #wrapper--hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 2em;
+  }
 
-    .section--page{
-        padding-top: 1em;
-        padding-bottom: 1em;
-        margin-top: 3em;
-    }
+  #socials--list {
+    justify-content: center;
+  }
 
-    #wrapper--hero{
-        display: flex;
-        align-items: center;
-        gap: 1em;
-    }
-
-    #profile-pic{
-        width: 200px;
-        height: 200px;
-    }
-
-    #wrapper--hero{
-        flex-direction: column;
-    }
-
-    .card--work-history{
-        border-left: none;
-        padding-left: 0;
-    }
+  .main-grid-layout {
+    grid-template-columns: 1fr;
+  }
 }
