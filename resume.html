@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Resume — Vipanshu Suman</title>
+        <meta name="description" content="View Vipanshu Kumar Suman's resume — B.Tech Computer Science student passionate about ML, IoT, and innovative tech solutions.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./styles/main.css">
+        <link rel="stylesheet" href="./styles/resume.css">
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+        <script>
+            // Apply saved theme instantly to avoid flash of wrong theme
+            (function() {
+                var saved = localStorage.getItem('theme');
+                if (saved) document.documentElement.setAttribute('data-theme', saved);
+            })();
+        </script>
+    </head>
+    <body>
+        <div id="scroll-progress"></div>
+        <nav id="topnav">
+            <a href="./index.html#hero">About</a>
+            <a href="./index.html#education">Education</a>
+            <a href="./index.html#skills">Skills</a>
+            <a href="./index.html#projects">Projects</a>
+            <a href="./index.html#certificates">Certificates</a>
+            <button id="theme-toggle" aria-label="Toggle dark/light theme">
+                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </nav>
+
+        <div id="resume-container">
+
+            <!-- Header -->
+            <div id="resume-header" class="fade-in visible">
+                <div id="resume-header-left">
+                    <a href="./index.html" id="back-link" aria-label="Back to portfolio">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                        Back
+                    </a>
+                    <h1>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        My Resume
+                    </h1>
+                </div>
+                <div id="resume-header-right">
+                    <a href="./assets/resume.pdf" download id="download-btn" aria-label="Download resume PDF">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        Download PDF
+                    </a>
+                </div>
+            </div>
+
+            <!-- Toolbar -->
+            <div id="pdf-toolbar" class="fade-in visible">
+                <div id="toolbar-left">
+                    <button id="zoom-out-btn" aria-label="Zoom out" title="Zoom Out">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </button>
+                    <span id="zoom-level">100%</span>
+                    <button id="zoom-in-btn" aria-label="Zoom in" title="Zoom In">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    </button>
+                    <button id="zoom-fit-btn" aria-label="Fit to width" title="Fit to Width">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+                    </button>
+                </div>
+                <div id="toolbar-center">
+                    <button id="prev-page-btn" aria-label="Previous page" title="Previous Page">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+                    <span id="page-info">
+                        <input type="number" id="page-input" value="1" min="1" aria-label="Current page">
+                        <span id="page-separator">/</span>
+                        <span id="total-pages">1</span>
+                    </span>
+                    <button id="next-page-btn" aria-label="Next page" title="Next Page">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+                <div id="toolbar-right">
+                    <button id="fullscreen-btn" aria-label="Toggle fullscreen" title="Fullscreen">
+                        <svg class="icon-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                        <svg class="icon-compress" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="14" y1="10" x2="21" y2="3"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- PDF Viewer -->
+            <div id="pdf-viewer" class="fade-in visible">
+                <!-- Loading state -->
+                <div id="pdf-loading">
+                    <div class="loader-ring">
+                        <div></div><div></div><div></div><div></div>
+                    </div>
+                    <p>Loading resume…</p>
+                </div>
+                <!-- Error state -->
+                <div id="pdf-error" style="display: none;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <p>Failed to load PDF</p>
+                    <a href="./assets/resume.pdf" download>Download instead</a>
+                </div>
+                <!-- Canvas container -->
+                <div id="pdf-canvas-wrapper">
+                    <div id="pdf-page-container">
+                        <canvas id="pdf-canvas"></canvas>
+                        <div id="pdf-annotation-layer"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="fade-in visible" style="max-width:960px;margin:0 auto;padding:0 1.5rem;">
+            <p>Made with <span class="heart">♥</span> by Vipanshu Suman</p>
+        </footer>
+
+        <script>
+            // PDF.js setup
+            pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+            const PDF_URL = './assets/resume.pdf';
+
+            // State
+            let pdfDoc = null;
+            let currentPage = 1;
+            let totalPages = 0;
+            let currentScale = 1.5;
+            let rendering = false;
+            let pendingPage = null;
+            let fitToWidth = false;
+
+            // DOM
+            const canvas = document.getElementById('pdf-canvas');
+            const ctx = canvas.getContext('2d');
+            const canvasWrapper = document.getElementById('pdf-canvas-wrapper');
+            const pageContainer = document.getElementById('pdf-page-container');
+            const annotationLayer = document.getElementById('pdf-annotation-layer');
+            const loadingEl = document.getElementById('pdf-loading');
+            const errorEl = document.getElementById('pdf-error');
+            const pageInput = document.getElementById('page-input');
+            const totalPagesEl = document.getElementById('total-pages');
+            const zoomLevelEl = document.getElementById('zoom-level');
+            const prevBtn = document.getElementById('prev-page-btn');
+            const nextBtn = document.getElementById('next-page-btn');
+            const zoomInBtn = document.getElementById('zoom-in-btn');
+            const zoomOutBtn = document.getElementById('zoom-out-btn');
+            const zoomFitBtn = document.getElementById('zoom-fit-btn');
+            const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+            // Render a page
+            function renderPage(num) {
+                if (rendering) {
+                    pendingPage = num;
+                    return;
+                }
+                rendering = true;
+
+                pdfDoc.getPage(num).then(function(page) {
+                    var scale = fitToWidth ? getScaleToFitWidth(page) : currentScale;
+                    var viewport = page.getViewport({ scale: scale });
+
+                    // Size the page container
+                    pageContainer.style.width = Math.floor(viewport.width) + 'px';
+                    pageContainer.style.height = Math.floor(viewport.height) + 'px';
+
+                    // HiDPI support
+                    var dpr = window.devicePixelRatio || 1;
+                    canvas.width = Math.floor(viewport.width * dpr);
+                    canvas.height = Math.floor(viewport.height * dpr);
+                    canvas.style.width = Math.floor(viewport.width) + 'px';
+                    canvas.style.height = Math.floor(viewport.height) + 'px';
+
+                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+                    // Render canvas
+                    var renderTask = page.render({
+                        canvasContext: ctx,
+                        viewport: viewport,
+                    });
+
+                    renderTask.promise.then(function() {
+                        // Render annotation layer (clickable links)
+                        annotationLayer.innerHTML = '';
+                        annotationLayer.style.width = Math.floor(viewport.width) + 'px';
+                        annotationLayer.style.height = Math.floor(viewport.height) + 'px';
+
+                        return page.getAnnotations();
+                    }).then(function(annotations) {
+                        // Filter to link annotations
+                        annotations.forEach(function(anno) {
+                            if (anno.subtype !== 'Link') return;
+
+                            var rect = anno.rect;
+                            // Transform PDF coordinates to viewport coordinates
+                            var bounds = pdfjsLib.Util.normalizeRect(
+                                viewport.convertToViewportRectangle(rect)
+                            );
+
+                            var link = document.createElement('a');
+                            link.className = 'pdf-link-annotation';
+                            link.style.left = Math.floor(bounds[0]) + 'px';
+                            link.style.top = Math.floor(bounds[1]) + 'px';
+                            link.style.width = Math.ceil(bounds[2] - bounds[0]) + 'px';
+                            link.style.height = Math.ceil(bounds[3] - bounds[1]) + 'px';
+
+                            if (anno.url) {
+                                link.href = anno.url;
+                                link.target = '_blank';
+                                link.rel = 'noopener noreferrer';
+                                link.title = anno.url;
+                            } else if (anno.dest) {
+                                // Internal PDF link (jump to page)
+                                link.href = '#';
+                                link.addEventListener('click', function(e) {
+                                    e.preventDefault();
+                                    // For simplicity, internal links are not fully supported
+                                });
+                            }
+
+                            annotationLayer.appendChild(link);
+                        });
+
+                        rendering = false;
+                        currentPage = num;
+                        pageInput.value = num;
+                        updateNavButtons();
+
+                        if (fitToWidth) {
+                            currentScale = scale;
+                            fitToWidth = false;
+                        }
+                        zoomLevelEl.textContent = Math.round(currentScale * 100) + '%';
+
+                        if (pendingPage !== null) {
+                            var p = pendingPage;
+                            pendingPage = null;
+                            renderPage(p);
+                        }
+                    });
+                });
+            }
+
+            function getScaleToFitWidth(page) {
+                var unscaledViewport = page.getViewport({ scale: 1 });
+                // Use actual available wrapper width minus its CSS padding
+                var wrapperStyle = window.getComputedStyle(canvasWrapper);
+                var padLeft = parseFloat(wrapperStyle.paddingLeft) || 0;
+                var padRight = parseFloat(wrapperStyle.paddingRight) || 0;
+                var containerWidth = canvasWrapper.clientWidth - padLeft - padRight;
+                return containerWidth / unscaledViewport.width;
+            }
+
+            function updateNavButtons() {
+                prevBtn.disabled = currentPage <= 1;
+                nextBtn.disabled = currentPage >= totalPages;
+            }
+
+            // Load PDF
+            function loadPDF() {
+                pdfjsLib.getDocument(PDF_URL).promise.then(function(doc) {
+                    pdfDoc = doc;
+                    totalPages = doc.numPages;
+                    totalPagesEl.textContent = totalPages;
+                    pageInput.max = totalPages;
+
+                    loadingEl.style.display = 'none';
+                    canvasWrapper.style.display = 'block';
+
+                    // Always fit to width on initial load
+                    fitToWidth = true;
+                    renderPage(1);
+                }).catch(function(err) {
+                    console.error('PDF load error:', err);
+                    loadingEl.style.display = 'none';
+                    errorEl.style.display = 'flex';
+                });
+            }
+
+            // Navigation
+            prevBtn.addEventListener('click', function() {
+                if (currentPage > 1) renderPage(currentPage - 1);
+            });
+
+            nextBtn.addEventListener('click', function() {
+                if (currentPage < totalPages) renderPage(currentPage + 1);
+            });
+
+            pageInput.addEventListener('change', function() {
+                var val = parseInt(pageInput.value);
+                if (val >= 1 && val <= totalPages) {
+                    renderPage(val);
+                } else {
+                    pageInput.value = currentPage;
+                }
+            });
+
+            pageInput.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.target.blur();
+                }
+            });
+
+            // Zoom
+            var ZOOM_STEP = 0.2;
+            var MIN_ZOOM = 0.5;
+            var MAX_ZOOM = 4.0;
+
+            zoomInBtn.addEventListener('click', function() {
+                fitToWidth = false;
+                currentScale = Math.min(currentScale + ZOOM_STEP, MAX_ZOOM);
+                renderPage(currentPage);
+            });
+
+            zoomOutBtn.addEventListener('click', function() {
+                fitToWidth = false;
+                currentScale = Math.max(currentScale - ZOOM_STEP, MIN_ZOOM);
+                renderPage(currentPage);
+            });
+
+            zoomFitBtn.addEventListener('click', function() {
+                fitToWidth = true;
+                renderPage(currentPage);
+            });
+
+            // Fullscreen
+            fullscreenBtn.addEventListener('click', function() {
+                var viewer = document.getElementById('pdf-viewer');
+                if (!document.fullscreenElement) {
+                    viewer.requestFullscreen().catch(function() {});
+                } else {
+                    document.exitFullscreen();
+                }
+            });
+
+            document.addEventListener('fullscreenchange', function() {
+                document.body.classList.toggle('is-fullscreen', !!document.fullscreenElement);
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.target.tagName === 'INPUT') return;
+                switch (e.key) {
+                    case 'ArrowLeft':
+                    case 'ArrowUp':
+                        e.preventDefault();
+                        if (currentPage > 1) renderPage(currentPage - 1);
+                        break;
+                    case 'ArrowRight':
+                    case 'ArrowDown':
+                        e.preventDefault();
+                        if (currentPage < totalPages) renderPage(currentPage + 1);
+                        break;
+                    case '+':
+                    case '=':
+                        fitToWidth = false;
+                        currentScale = Math.min(currentScale + ZOOM_STEP, MAX_ZOOM);
+                        renderPage(currentPage);
+                        break;
+                    case '-':
+                        fitToWidth = false;
+                        currentScale = Math.max(currentScale - ZOOM_STEP, MIN_ZOOM);
+                        renderPage(currentPage);
+                        break;
+                }
+            });
+
+            // Resize handler — auto fit-to-width on mobile
+            var resizeTimeout;
+            var isMobile = window.innerWidth <= 768;
+
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(function() {
+                    isMobile = window.innerWidth <= 768;
+                    if (pdfDoc) {
+                        if (isMobile) {
+                            fitToWidth = true;
+                        }
+                        renderPage(currentPage);
+                    }
+                }, 200);
+            });
+
+            // Orientation change
+            window.addEventListener('orientationchange', function() {
+                setTimeout(function() {
+                    if (pdfDoc) {
+                        fitToWidth = true;
+                        renderPage(currentPage);
+                    }
+                }, 300);
+            });
+
+            // Touch swipe navigation
+            var touchStartX = 0;
+            var touchStartY = 0;
+            var touchEndX = 0;
+            var touchEndY = 0;
+            var swiping = false;
+
+            var viewerEl = document.getElementById('pdf-viewer');
+
+            viewerEl.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+                swiping = true;
+            }, { passive: true });
+
+            viewerEl.addEventListener('touchend', function(e) {
+                if (!swiping) return;
+                swiping = false;
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+
+                var dx = touchEndX - touchStartX;
+                var dy = touchEndY - touchStartY;
+
+                // Only trigger if horizontal swipe is dominant and long enough
+                if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+                    if (dx < 0 && currentPage < totalPages) {
+                        // Swipe left → next page
+                        renderPage(currentPage + 1);
+                    } else if (dx > 0 && currentPage > 1) {
+                        // Swipe right → previous page
+                        renderPage(currentPage - 1);
+                    }
+                }
+            }, { passive: true });
+
+            // Double-tap to toggle fit-to-width on mobile
+            var lastTap = 0;
+            viewerEl.addEventListener('touchend', function(e) {
+                var now = Date.now();
+                if (now - lastTap < 300) {
+                    e.preventDefault();
+                    fitToWidth = true;
+                    renderPage(currentPage);
+                }
+                lastTap = now;
+            });
+
+            // Theme toggle (duplicated from main site)
+            var toggle = document.getElementById('theme-toggle');
+            toggle.addEventListener('click', function() {
+                var html = document.documentElement;
+                var current = html.getAttribute('data-theme');
+                var next = current === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+
+            // Scroll progress bar
+            var progressBar = document.getElementById('scroll-progress');
+            window.addEventListener('scroll', function() {
+                var scrolled = document.documentElement.scrollTop;
+                var total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+            }, { passive: true });
+
+            // Init
+            loadPDF();
+        </script>
+    </body>
+</html>

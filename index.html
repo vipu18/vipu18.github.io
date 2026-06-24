@@ -1,199 +1,265 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="dark">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Vipanshu Suman</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles/main.css">
-        <link rel="stylesheet" href="./styles/theme-switcher.css">
-        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">          
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <script>
+            // Apply saved theme instantly to avoid flash of wrong theme
+            (function() {
+                var saved = localStorage.getItem('theme');
+                if (saved) document.documentElement.setAttribute('data-theme', saved);
+            })();
+        </script>
     </head>
     <body>
-        <div id="container--main">
+        <div id="scroll-progress"></div>
+        <nav id="topnav">
+            <a href="#hero">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certificates">Certificates</a>
+            <button id="theme-toggle" aria-label="Toggle dark/light theme">
+                <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </nav>
+        <div id="container">
 
-            <section id="wrapper--hero" class="section--page">
-                <img id="profile-pic" src="./assets/images/image.jpg">
+            <header id="hero" class="fade-in">
+                <img id="profile-pic" src="./assets/images/photo.jpeg" alt="Vipanshu Kumar Suman">
+                <h1>Vipanshu Kumar Suman</h1>
+                <p class="subtitle">B.Tech Computer Science Engineering student at Rajiv Gandhi Proudyogiki Vishwavidyalaya passionate about machine learning, IoT systems, and innovative technology solutions. Interested in building real-world AI and IoT applications with practical impact. Focused on continuous learning, problem-solving, and modern technology development. Committed to creating efficient and user-focused digital solutions.</p>
+                <nav>
+                    <a href="https://github.com/vipu18" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="#6e40c9"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.21 11.39.6.11.79-.26.79-.58v-2.23c-3.34.73-4.03-1.42-4.03-1.42-.55-1.39-1.33-1.76-1.33-1.76-1.09-.74.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.19.69.8.58C20.56 21.8 24 17.3 24 12 24 5.37 18.63 0 12 0z"/></svg>
+                        GitHub
+                    </a>
+                    <a href="https://twitter.com/VipanshuSuman" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="#1D9BF0"><path d="M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.17l-4.71-6.23-5.4 6.23H2.74l7.73-8.84L1.25 2.25h6.33l4.25 5.62zm-1.16 17.52h1.83L7.08 4.13H5.12z"/></svg>
+                        Twitter
+                    </a>
+                    <a href="https://www.linkedin.com/in/vipanshu-suman/" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.27V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+                        LinkedIn
+                    </a>
+                    <a href="https://instagram.com/vipanshu.10" target="_blank">
+                        <svg viewBox="0 0 24 24"><defs><linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FCAF45"/><stop offset="30%" stop-color="#F77737"/><stop offset="55%" stop-color="#E1306C"/><stop offset="80%" stop-color="#C13584"/><stop offset="100%" stop-color="#833AB4"/></linearGradient></defs><path fill="url(#ig-grad)" d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07C3.9 21.62 2.38 20.07 2.23 16.85 2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.9 3.9 2.38 7.15 2.23c1.27-.06 1.65-.07 4.85-.07zm0-2.16C8.74 0 8.33.01 7.05.07 2.7.27.27 2.7.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.3.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32A6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+                        Instagram
+                    </a>
+                    <a href="./resume.html">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#34A853" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        Resume
+                    </a>
+                    <a href="mailto:vipanshu@duck.com">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#EA4335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        Mail
+                    </a>
+                </nav>
+            </header>
 
-                <div>
-                    <h1 id="user-name">Vipanshu Kumar Suman</h1>
-                    <p id="bio">He is a B. Tech Computer Science Engineering student at Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV), with a profound interest in machine learning, and IoT systems. Driven by a passion for technological innovation, he thrives on addressing complex real-world challenges and is committed to the pursuit of knowledge and excellence.</p>
-                </section>
 
-                <section class="section--page">        
-                    <div id="socials--list">
-                        <a href="https://instagram.com/vipanshu.10" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" alt="Instagram" width="18" height="18" style="vertical-align: middle; margin-right: 6px;">
-                            Instagram
-                        </a>
-                        <a href="https://twitter.com/VipanshuSuman" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg" alt="Twitter/X" width="18" height="18" style="vertical-align: middle; margin-right: 6px;">
-                            Twitter
-                        </a>
-                        <a href="https://www.linkedin.com/in/vipanshu-suman/" target="_blank">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/81/LinkedIn_icon.svg" alt="LinkedIn" width="18" height="18" style="vertical-align: middle; margin-right: 6px;">
-                            Linkedin
-                        </a>
-                        <a href="https://github.com/vipu18" target="_blank">
-                            <img src="./assets/logo/github.svg" alt="GitHub" width="18" height="18" style="vertical-align: middle; margin-right: 6px;">
-                            Github
-                        </a>
-                        <a href="mailto:vipanshu@duck.com" target="_blank">
-                            <img src="./assets/logo/mail.png" alt="Mail" width="18" height="18" style="vertical-align: middle; margin-right: 6px;">
-                            Mail
-                        </a>
-                    </div>                                    
-                                                            
-                </section>
-
-                <section class="section--page">
-                    <h2>Skills & Qualifications</h2>
-                    <ul id="qualifications--list">
-                        <li>✔️ Strong understanding of data structures, algorithm design, and optimization for time and space complexity.</li>
-                        <li>✔️ Strong grasp of data structures, algorithms, and performance optimization.</li>
-                        <li>✔️ Skilled in full-stack development using Flask, Django, and FastAPI.</li>
-                        <li>✔️ Experienced in building responsive UIs with HTML, CSS, and Streamlit.</li>
-                        <li>✔️ Proficient in integrating APIs like OpenAI and ThingSpeak for ML and IoT projects.</li>
-                        <li>✔️ Hands-on with IoT systems using ESP8266, DHT11, and BMP180 sensors.</li>
-                        <li>✔️ Adept in database design, version control (Git/GitHub), and data visualization.</li>
-                        <li>✔️ Familiar with LaTeX, Jinja2, and dynamic PDF/resume generation workflows.</li>
-                    </ul>
-                    <section class="section--page">
-                        <h2>Tech stack</h2>
-                        <div id="skills">
-                            <div class="skills-set"><span>C</span></div>
-                            <div class="skills-set"><span>C++</span></div>
-                            <div class="skills-set"><span>Python</span></div>
-                            <div class="skills-set"><span>JavaScript</span></div>
-                            <div class="skills-set"><span>HTML</span></div>
-                            <div class="skills-set"><span>CSS</span></div>
-                            <div class="skills-set"><span>Flask</span></div>
-                            <div class="skills-set"><span>Django</span></div>
-                            <div class="skills-set"><span>FastAPI</span></div>
-                            <div class="skills-set"><span>ESP8266</span></div>
-                            <div class="skills-set"><span>DHT11</span></div>
-                            <div class="skills-set"><span>BMP180</span></div>
-                            <div class="skills-set"><span>Ardiuno</span></div>
-                            <div class="skills-set"><span>NodeMCU</span></div>
-                            <div class="skills-set"><span>ThingSpeak API</span></div>
-                            <div class="skills-set"><span>OpenAI API</span></div>
-                            <div class="skills-set"><span>Git/GitHub</span></div>
-                            <div class="skills-set"><span>Data Structures</span></div>
-                            <div class="skills-set"><span>Algorithms</span></div>
-                            <div class="skills-set"><span>TensorFlow</span></div>
-                            <div class="skills-set"><span>Keras</span></div>
-                            <div class="skills-set"><span>NLTK</span></div>
-                            <div class="skills-set"><span>Keras Tokenizer</span></div>
-                            <div class="skills-set"><span>Pandas</span></div>
-                            <div class="skills-set"><span>NumPy</span></div>
-                            <div class="skills-set"><span>Matplotlib</span></div>
-                            <div class="skills-set"><span>LaTeX</span></div>
-                            <div class="skills-set"><span>Jinja2</span></div>
-                            <div class="skills-set"><span>Streamlit</span></div>
-                            <div class="skills-set"><span>Puter.JS</span></div>
-                            <div class="skills-set"><span>Hugging Face Transformers</span></div>
-                        </div>
-                        <h2>Courses</h2>
-                        <div id="skills">
-                            <div class="skills-set"><span>Data Structures & Algorithms</span></div>
-                            <div class="skills-set"><span>Introduction to IoT</span></div>
-                        </div>
-                    </section>               
-                </section>             
-                <section class="section--page">
-                    <h2>Education</h2>
-                    <div class="education-item">
-                        <strong><h3>🏫 Bachelor of Technology in Computer Science</h3></strong>                      
-                        <ul>
-                            <strong><li>Rajiv Gandhi Proudyogiki Vishwavidyalaya, India</li></strong>
-                            <li>2022 - 2026</li>
-                            <li>Pursuing Bachelor's in Computer Science</li>
-                        </ul>
+            <section id="education" class="fade-in">
+                <h2>Education</h2>
+                <div class="edu-item">
+                    <div class="edu-meta">
+                        <h3>Bachelor of Technology in Computer Science</h3>
+                        <em>2022–2026</em>
                     </div>
-                    
-                    <div class="education-item">
-                        <strong><h3>🏫 Higher Secondary Education</h3></strong>                      
-                        <ul>
-                            <strong><li>Golden International School, Indore, India</li></strong>
-                            <li>2017 - 2022</li>
-                            <li>Completed Higher & Secondary Education</li>
-                        </ul>
-                    </div>                  
-                    
-                </section>
-                <section id="work-history-wrapper" class="section--page">
-                    <h2>Projects</h2>
+                    <p class="edu-clg">Rajiv Gandhi Proudyogiki Vishwavidyalaya, India</p>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-meta">
+                        <h3>Higher Secondary Education</h3>
+                        <em>2017–2022</em>
+                    </div>
+                    <p class="edu-clg">Golden International School, Indore, India</p>
+                </div>
+            </section>
 
-                    <div class="card--work-history">
-                        <a class="project-link" href="https://github.com/vipu18/TruthInBite" target="_blank">
-                            🍜 TruthInBite AI-Powered Food Label Analyzer
-                        </a>                      
-                        <p>Created an AI-driven web application that analyses food labels from a single image upload, delivering ingredient breakdowns, nutrition facts, and allergen alerts. Integrated Google Gemini 1.5 Flash for advanced OCR and structured JSON extraction across multiple products. Developed a personalised “Health Score” engine that flags unhealthy or misleading items based on user profiles. The tool uses Streamlit for a responsive UI and leverages Pandas and Pillow for real-time insights, empowering healthier, data-informed food decisions.</p>
-                        <strong>Tech Stack: Python, Streamlit, Google Gemini API, Pandas, python-dotenv, google-generativeai, Pillow</strong>
-                        </div>
+            <section id="skills" class="fade-in">
+                <h2>Skills</h2>
+                <dl>
+                    <dt>Languages</dt>
+                    <dd><span class="tag">C</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">JavaScript</span></dd>
 
-                    <div class="card--work-history">
-                        <a class="project-link" href="https://github.com/vipu18/Image-Descriptions-Generator" target="_blank">
-                            📷 Image Caption Generator using BLIP Model
+                    <dt>Web &amp; Backend</dt>
+                    <dd><span class="tag">Flask</span><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">Streamlit</span><span class="tag">HTML</span><span class="tag">CSS</span></dd>
+
+                    <dt>ML / AI</dt>
+                    <dd><span class="tag">TensorFlow</span><span class="tag">Keras</span><span class="tag">NLTK</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Hugging Face Transformers</span></dd>
+
+                    <dt>IoT &amp; Hardware</dt>
+                    <dd><span class="tag">ESP8266</span><span class="tag">DHT11</span><span class="tag">BMP180</span><span class="tag">Arduino</span><span class="tag">ESP8266</span><span class="tag">NodeMCU</span><span class="tag">ThingSpeak API</span></dd>
+
+                    <dt>Tools</dt>
+                    <dd><span class="tag">Git/GitHub</span><span class="tag">SQLite</span></dd>
+
+                    <dt>Courses</dt>
+                    <dd><span class="tag">Data Structures &amp; Algorithms</span><span class="tag">Introduction to IoT</span><span class="tag">Computer Networks</span><span class="tag">DBMS</span><span class="tag">Operating Systems</span></dd>
+                </dl>
+            </section>
+
+            <section id="projects" class="fade-in">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <article class="project">
+                        <a class="project-link" href="https://github.com/vipu18/TruthInBite" target="_blank" rel="noopener noreferrer" aria-label="Open TruthInBite project on GitHub">
+                            <span class="project-num">01</span>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">TruthInBite (AI-Powered Food Label Analyzer)</h3>
+                                    <span class="project-icon" aria-hidden="true">↗</span>
+                                </div>
+                                <p class="project-description">AI-powered web app that analyzes food labels from a single image, providing ingredient insights, nutrition facts, allergen alerts, and a personalized Health Score.</p>
+                                <div class="project-stack"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Google Gemini API</span><span class="tag">Pandas</span><span class="tag">Pillow</span></div>
+                            </div>
                         </a>
-                        <p>Created a web-based program in AI that can automatically make descriptive photo captions based on the BLIP (Bootstrapping Language-Image Pre-training) model. Made use of Hugging Face Transformers for highly accurate captioning as well as PIL for quick processing of an image. Also added a Gradio interface for live, interactive processing of the captions as well as an export function for writing the results out in a CSV file for added user-friendly functionality, providing speed, accuracy, and usability in a single program.</p>
-                        <strong>Tech Stack: Python, Gradio, Hugging Face Transformers, PIL, Pandas</strong>
-                        </div>  
+                    </article>
 
-                    <div class="card--work-history">
-                        <a class="project-link" href="https://github.com/vipu18/Weather-Monitoring-System" target="_blank">
-                            ☁️ Weather Monitoring System Using IoT
+                    <article class="project">
+                        <a class="project-link" href="https://github.com/vipu18/Image-Descriptions-Generator" target="_blank" rel="noopener noreferrer" aria-label="Open Image Caption Generator using BLIP Model project on GitHub">
+                            <span class="project-num">02</span>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">Image Caption Generator using BLIP Model</h3>
+                                    <span class="project-icon" aria-hidden="true">↗</span>
+                                </div>
+                                <p class="project-description">AI-powered image caption generator using BLIP that creates descriptive captions from uploaded images through an interactive Gradio interface with CSV export support.</p>
+                                <div class="project-stack"><span class="tag">Python</span><span class="tag">Gradio</span><span class="tag">Hugging Face Transformers</span><span class="tag">PIL</span><span class="tag">Pandas</span></div>
+                            </div>
                         </a>
-                        <p>Designed an IoT real-time weather tracking system with an ESP8266-based microcontroller and DHT11/BMP180 sensors for tracking temperature, humidity, and air pressure. Ensured easy data transmission with ThingSpeak API over Wi-Fi for cloud-based visual interpretation and historical trend tracking. Showcased a 25% greater data reliability with sensor calibration and multi condition testing.</p>
-                        <strong>Tech Stack: ESP8266, DHT11, BMP180, HTML, ThingSpeak API</strong>
-                    </div>
+                    </article>
 
-                    <div class="card--work-history">
-                        <a class="project-link" href="https://github.com/vipu18/latex-resume-generator" target="_blank">
-                            📜 Latex Resume Generator
+                    <article class="project">
+                        <a class="project-link" href="https://github.com/vipu18/Weather-Monitoring-System" target="_blank" rel="noopener noreferrer" aria-label="Open Weather Monitoring System Using IoT project on GitHub">
+                            <span class="project-num">03</span>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">Weather Monitoring System Using IoT</h3>
+                                    <span class="project-icon" aria-hidden="true">↗</span>
+                                </div>
+                                <p class="project-description">IoT weather monitoring system using ESP8266, DHT11, and BMP180 sensors, transmitting real-time environmental data to ThingSpeak for cloud visualization over Wi-Fi.</p>
+                                <div class="project-stack"><span class="tag">ESP8266</span><span class="tag">DHT11</span><span class="tag">BMP180</span><span class="tag">HTML</span><span class="tag">ThingSpeak API</span></div>
+                            </div>
                         </a>
-                        <p>Created a smart resume builder that produces professionally styled, LaTeX-based PDF resumes with AI-optimized content. Employed Jinja2 for runtime templating and presented user data in a short, recruiter-friendly layout. Intuitive Streamlit frontend offers live customization, with Puter.JS serving fast, client-side rendering for near-immediate creation of a PDF streamlining the entire resume-building experience.</p>
-                        <strong>Tech Stack: Python, Streamlit, Jinja, LaTeX, Pandas, Puter.JS</strong>
-                    </div>
-                    
-                    <div class="card--work-history">
-                        <a class="project-link" href="https://github.com/vipu18/IMDB-Movie-Review-Sentiment-Analysis-Using-Machine-Learning" target="_blank">
-                            🎬 IMDB Movie Review Sentiment Analysis Using Machine Learning
+                    </article>
+
+                    <article class="project">
+                        <a class="project-link" href="https://github.com/vipu18/latex-resume-generator" target="_blank" rel="noopener noreferrer" aria-label="Open LaTeX Resume Generator project on GitHub">
+                            <span class="project-num">04</span>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">LaTeX Resume Generator</h3>
+                                    <span class="project-icon" aria-hidden="true">↗</span>
+                                </div>
+                                <p class="project-description">Resume builder generating LaTeX PDF resumes with AI-assisted content formatting, dynamic Jinja2 templates, customizable layouts, and automated PDF generation.</p>
+                                <div class="project-stack"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">Jinja2</span><span class="tag">LaTeX</span><span class="tag">Pandas</span><span class="tag">Puter.JS</span></div>
+                            </div>
                         </a>
-                        <p>The IMDB Movie Review Sentiment Analysis project utilizes machine learning to classify movie reviews as either positive or negative. It employs an LSTM (Long Short-Term Memory) network for sequence-based sentiment prediction, with text data preprocessed through tokenization and padding to ensure model compatibility. The model is trained on a labeled IMDB dataset to perform accurate binary classification. Real-time predictions are delivered via a user-friendly Gradio interface, enabling seamless interaction and instant sentiment analysis.</p>
-                        <strong>Tech Stack: Python, Gradio, Pandas, Numpy, Mathplotlib, Keras, TensorFlow</strong>
-                    </div>                   
-                </section>
+                    </article>
 
-                <section class="section--page">
-                    <h2>Certificates</h2>
+                    <article class="project">
+                        <a class="project-link" href="https://github.com/vipu18/IMDB-Movie-Review-Sentiment-Analysis-Using-Machine-Learning" target="_blank" rel="noopener noreferrer" aria-label="Open IMDB Movie Review Sentiment Analysis project on GitHub">
+                            <span class="project-num">05</span>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">IMDB Movie Review Sentiment Analysis</h3>
+                                    <span class="project-icon" aria-hidden="true">↗</span>
+                                </div>
+                                <p class="project-description">LSTM-based sentiment analysis model trained on the IMDB dataset, performing real-time movie review classification through an interactive Gradio interface with preprocessing.</p>
+                                <div class="project-stack"><span class="tag">Python</span><span class="tag">Gradio</span><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Keras</span><span class="tag">TensorFlow</span></div>
+                            </div>
+                        </a>
+                    </article>
 
-                    <div class="card--project">
-                        <a href="https://www.freecodecamp.org/certification/Vipanshu/responsive-web-design"><span>🏆 </span>Responsive Web Design (FreeCodeCamp)</a>
-                    </div>
-                    <div class="card--project">
-                        <a href="https://drive.google.com/file/d/1VaypYvCF1Jshv--Tq2-jexmdvbOzG8rh/view" ><span>🏆 </span>C/CPP Programmer</a>
-                    </div>
-                    <div class="card--project">
-                        <a href="https://www.coursera.org/account/accomplishments/verify/5ZUGPHKBFPJF" ><span>🏆 </span>HTML, CSS, and Javascript for Web Developers (John Hopkins University)</a>
-                    </div>
-                    <div class="card--project">
-                        <a href="https://cs50.harvard.edu/certificates/5048568f-85ff-4ff8-8e67-ae220b3f72ea"><span>🏆 </span>CS50's Understanding Technology (Havard)</a>
-                    </div>
-                    <div class="card--project">
-                        <a href="https://cs50.harvard.edu/certificates/5048568f-85ff-4ff8-8e67-ae220b3f72ea"><span>🏆 </span>Computer Science 50X (Havard)</a>
-                    </div>
-                    <div class="card--project">
-                        <a href="https://www.udemy.com/certificate/UC-CM1QQMAL/"><span>🏆 </span>Python Programmer (Udemy)</a>
-                        <section class="section--page"></section>
+                    <article class="project">
+                        <a class="project-link" href="https://github.com/vipu18/SecureVault" target="_blank" rel="noopener noreferrer" aria-label="Open SecureVault project on GitHub">
+                            <span class="project-num">06</span>
+                            <div class="project-content">
+                                <div class="project-header">
+                                    <h3 class="project-title">SecureVault</h3>
+                                    <span class="project-icon" aria-hidden="true">↗</span>
+                                </div>
+                                <p class="project-description">Self-hosted encrypted document vault with AES-256-GCM encryption, OTP-secured sharing, DRM-protected PDF viewing, audit logging, cloud synchronization, and KYC validation.</p>
+                                <div class="project-stack"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">AES-256-GCM</span><span class="tag">PBKDF2-SHA256</span><span class="tag">PDF.js</span><span class="tag">SQLite</span><span class="tag">rclone</span></div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section id="certificates" class="fade-in">
+                <h2>Certificates</h2>
+                <ul class="cert-list">
+                    <li><a href="https://www.freecodecamp.org/certification/Vipanshu/responsive-web-design" target="_blank"><span class="cert-name">Responsive Web Design</span><span class="cert-issuer">FreeCodeCamp</span></a></li>
+                    <li><a href="https://drive.google.com/file/d/1VaypYvCF1Jshv--Tq2-jexmdvbOzG8rh/view" target="_blank"><span class="cert-name">C/C++ Programmer</span><span class="cert-issuer"></span></a></li>
+                    <li><a href="https://www.coursera.org/account/accomplishments/verify/5ZUGPHKBFPJF" target="_blank"><span class="cert-name">HTML, CSS, and Javascript for Web Developers</span><span class="cert-issuer">Johns Hopkins University</span></a></li>
+                    <li><a href="https://cs50.harvard.edu/certificates/5048568f-85ff-4ff8-8e67-ae220b3f72ea" target="_blank"><span class="cert-name">CS50's Understanding Technology</span><span class="cert-issuer">Harvard</span></a></li>
+                    <li><a href="https://cs50.harvard.edu/certificates/5048568f-85ff-4ff8-8e67-ae220b3f72ea" target="_blank"><span class="cert-name">Computer Science 50X</span><span class="cert-issuer">Harvard</span></a></li>
+                    <li><a href="https://www.udemy.com/certificate/UC-CM1QQMAL/" target="_blank"><span class="cert-name">Python Programmer</span><span class="cert-issuer">Udemy</span></a></li>
+                </ul>
+            </section>
+
+            <footer>
+                <p>Made with <span class="heart">♥</span> by Vipanshu Suman</p>
+            </footer>
+
         </div>
-                <footer style="text-align: center; margin-top: 20px;">
-            <p>Made with <span id="heart">❤️</span> by Vipanshu</p>
-        </footer>
-        <div id="theme-switcher">
-            <div class="theme" id="theme-light" data-theme="light"></div>
-            <div class="theme" id="theme-dark" data-theme="dark"></div>
-        </div>
+        <script>
+            // Fade-in on scroll
+            const fadeObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); fadeObserver.unobserve(e.target); } });
+            }, { threshold: 0.08 });
+            document.querySelectorAll('.fade-in').forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight) {
+                    el.classList.add('visible');
+                } else {
+                    fadeObserver.observe(el);
+                }
+            });
+
+            // Scroll progress bar
+            const progressBar = document.getElementById('scroll-progress');
+            window.addEventListener('scroll', () => {
+                const scrolled = document.documentElement.scrollTop;
+                const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+            }, { passive: true });
+
+            // Active nav section highlight
+            const navLinks = document.querySelectorAll('#topnav a');
+            const sectionIds = Array.from(navLinks).map(a => a.getAttribute('href').slice(1));
+            const navObserver = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        navLinks.forEach(a => a.classList.remove('active'));
+                        const active = document.querySelector(`#topnav a[href="#${e.target.id}"]`);
+                        if (active) active.classList.add('active');
+                    }
+                });
+            }, { rootMargin: '-44px 0px -65% 0px', threshold: 0 });
+            sectionIds.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) navObserver.observe(el);
+            });
+
+            // Theme toggle
+            const toggle = document.getElementById('theme-toggle');
+            toggle.addEventListener('click', () => {
+                const html = document.documentElement;
+                const current = html.getAttribute('data-theme');
+                const next = current === 'dark' ? 'light' : 'dark';
+                html.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
+            });
+        </script>
     </body>
-    <script src="js/theme-switcher.js"></script>
 </html>
