@@ -288,7 +288,23 @@ header nav a {
 nav a svg {
   width: 14px;
   height: 14px;
+  max-width: 14px;
+  max-height: 14px;
   flex-shrink: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+
+/* Ensure hero social link SVGs stay small even if HTML width/height attributes
+   are stripped by Cloudflare or other CDN minifiers */
+header nav a svg {
+  width: 14px !important;
+  height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
+  flex-shrink: 0;
+  overflow: hidden;
+  display: inline-block;
 }
 
 nav a:hover {
