@@ -119,6 +119,9 @@ section:last-of-type { border-bottom: none; }
 .btn-line { border-color: var(--line-strong); color: var(--ink); background: transparent; }
 .btn-line:hover { border-color: var(--accent); color: var(--accent-ink); transform: translateY(-1px); }
 .btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.btn.icon-only { padding: 0.7rem; border-radius: 14px; }
+.btn.icon-only svg { width: 19px; height: 19px; }
+.hero-actions .short { display: none; }
 
 /* ═══════════════ SECTION HEADS ═══════════════ */
 .sec-head { display: flex; align-items: baseline; gap: 0.8rem; margin-bottom: 0.4rem; }
@@ -224,6 +227,14 @@ footer .heart { color: #ff5e78; }
   .hero { padding-top: 2rem; }
   .hero-grid { grid-template-columns: 1fr; gap: 1.2rem; }
   .portrait { order: -1; justify-self: center; width: 150px; height: 150px; aspect-ratio: 1 / 1; border-radius: 50%; margin: 0; box-shadow: 0 0 0 4px var(--accent-soft); }
+  .hero-actions { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 0.3rem; margin: 0 -1.5rem; padding: 0 1.5rem 0.25rem; }
+  .hero-actions::-webkit-scrollbar { display: none; }
+  .hero-actions .btn { flex-shrink: 0; font-size: 0.7rem; padding: 0.55rem 0.8rem; }
+  .hero-actions .btn svg { width: 14px; height: 14px; }
+  .hero-actions .btn.icon-only { padding: 0.5rem; border-radius: 12px; flex: 1 0 auto; justify-content: center; }
+  .hero-actions .btn.icon-only svg { width: 19px; height: 19px; }
+  .hero-actions .long { display: none; }
+  .hero-actions .short { display: inline; }
   .entry { gap: 0.8rem; }
   .entry-rail { padding-right: 0.6rem; gap: 0.5rem; }
   .entry-year { font-size: 0.66rem; }
